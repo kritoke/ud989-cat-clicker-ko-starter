@@ -1,34 +1,34 @@
 var initialCats = [{
         name: 'Tabby',
-        image: 'img/434164568_fea0ad4013_z.jpg',
+        imgSrc: 'img/434164568_fea0ad4013_z.jpg',
         clickCount: 0,
         imgAttribution: 'http://www.flicker.com/photos/bigtallguy/434164568',
         nicknames: ['Tabtab', 'T-Bone', 'Mr. T', 'Tabitha Tab Tabby Catty Cat']
     },
     {
         name: 'Tiger',
-        image: 'img/4154543904_6e2428c421_z.jpg',
+        imgSrc: 'img/4154543904_6e2428c421_z.jpg',
         imgAttribution: 'https://www.flicker.com/photos/xshamx/4154543904',
         clickCount: 0,
         nicknames: ['Tigger']
     },
     {
         name: 'Scaredy',
-        image: 'img/22252709_010df3379e_z.jpg',
+        imgSrc: 'img/22252709_010df3379e_z.jpg',
         clickCount: 0,
         imgAttribution: 'https://www.flicker.com/photos/kpjas/22252709',
         nicknames: ['Casper']
     },
     {
         name: 'Shadow',
-        image: 'img/1413379559_412a540d29_z.jpg',
+        imgSrc: 'img/1413379559_412a540d29_z.jpg',
         clickCount: 0,
         imgAttribution: 'https://www.flicker.com/photos/malfet/1413379559',
         nicknames: ['Shooby']
     },
     {
         name: 'Sleepy',
-        image: 'img/9648464288_2516b35537_z.jpg',
+        imgSrc: 'img/9648464288_2516b35537_z.jpg',
         clickCount: 0,
         imgAttribution: 'https://www.flicker.com/photos/onesharp/9648464288',
         nicknames: ['Zzzzz']
@@ -77,6 +77,9 @@ var ViewModel = function() {
         self.currentCat().clickCount(self.currentCat().clickCount() + 1);
     };
 
+    this.setCat = function(clickedCat) {
+        self.currentCat(clickedCat);
+    };
 }
 
 ko.applyBindings(new ViewModel());
