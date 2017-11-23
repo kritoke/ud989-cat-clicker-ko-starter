@@ -7,6 +7,25 @@ var ViewModel = function() {
     this.incrementCounter = function() {
         this.clickCount(this.clickCount() + 1);
     };
+
+    this.catLevel = ko.computed(function() {
+        var levelName = '';
+        var counts = this.clickCount();
+        switch (true) {
+            case (counts <= 10):
+                levelName = 'Newborn';
+                break;
+            case (counts <= 20):
+                levelName = 'Infant';
+                break;
+            case counts <= 50:
+                levelName = 'Teen';
+                break;
+            default:
+                levelName = 'Adult';
+        }
+        return levelName;
+    }, this);
 }
 
 ko.applyBindings(new ViewModel());
